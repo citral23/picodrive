@@ -106,6 +106,14 @@ set_platform()
     MFLAGS="-march=mips32r2"
     platform="opendingux"
     ;;
+  lepus)
+   # more modern devices using opendingux, with Ingenic MIPS JZ4770 or newer
+    sound_drivers="sdl"
+    # mostly based on opendingux for gcw0, save device type as C define.
+    CFLAGS="$CFLAGS -D__`echo $platform | tr '[a-z]' '[A-Z]'`__"
+    MFLAGS="-march=mips32"
+    platform="opendingux"
+    ;;
   pandora)
     sound_drivers="oss alsa"
     have_libavcodec="yes"

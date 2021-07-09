@@ -21,6 +21,7 @@ const struct in_default_bind in_sdl_defbinds[] = {
 	{ SDLK_BACKSPACE,	IN_BINDTYPE_EMU, PEVB_STATE_SAVE },
 	{ SDLK_TAB,		IN_BINDTYPE_EMU, PEVB_STATE_LOAD },
 	{ SDLK_SPACE,	IN_BINDTYPE_EMU, PEVB_FF },
+	{ SDLK_HOME,	IN_BINDTYPE_EMU, PEVB_MENU },
 	{ 0, 0, 0 }
 };
 

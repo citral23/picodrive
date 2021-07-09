@@ -2,7 +2,7 @@
 Type=Application
 Name=Picodrive
 Comment=A megadrive/genesis emulator
-Exec=PicoDrive_gcw0 %f
+Exec=PicoDrive_lepus %f
 Icon=megadrive
 Terminal=false
 Categories=emulators;
