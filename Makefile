@@ -114,14 +114,14 @@ all: $(TARGET)-dge.zip
 CFLAGS += -DSDL_SURFACE_SW # some legacy dinguces had bugs in HWSURFACE
 else
 $(TARGET).opk: .od_data
-	rm -f .od_data/PicoDrive.dge
+	rm -f .od_data/PicoDrive*
 	mksquashfs .od_data $@ -all-root -noappend -no-exports -no-xattrs
 all: $(TARGET).opk
 endif
 
-ifneq (,$(filter %mips32r2, $(CFLAGS)))
-CFLAGS += -DMIPS_USE_SYNCI # mips32r2 clear_cache uses SYNCI instead of a syscall
-endif
+#ifneq (,$(filter %mips32r2, $(CFLAGS)))
+#CFLAGS += -DMIPS_USE_SYNCI # mips32r2 clear_cache uses SYNCI instead of a syscall
+#endif
 
 OBJS += platform/opendingux/inputmap.o
 use_inputmap ?= 1
@@ -137,7 +137,7 @@ $(TARGET).zip: $(TARGET)
 	cp platform/game_def.cfg .od_data
 	cp $< .od_data/PicoDrive
 	$(STRIP) .od_data/PicoDrive
-	rm -f .od_data/default.*.desktop .od_data/PicoDrive.dge
+	rm -f .od_data/default.*.desktop .od_data/PicoDrive*
 	cd .od_data && zip -9 -r ../$@ *
 all: $(TARGET).zip
 

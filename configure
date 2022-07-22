@@ -103,7 +103,6 @@ set_platform()
     sound_drivers="sdl"
     # mostly based on opendingux for gcw0, save device type as C define.
     CFLAGS="$CFLAGS -D__`echo $platform | tr '[a-z]' '[A-Z]'`__"
-    MFLAGS="-march=mips32r2"
     platform="opendingux"
     ;;
   miyoo)
